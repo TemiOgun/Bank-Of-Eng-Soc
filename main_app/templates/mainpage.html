@@ -1,0 +1,44 @@
+
+{% load static %}
+{% extends "base.html" %}
+
+{% block title %}MainPage{% endblock %}
+	{% block content %}
+	
+    <div class="content">
+      <div id="box">
+        <div class="box-top">News</div>
+        <div class="box-panel">
+          <h3>Message from director: </h3>
+		  <p>{{message.date}}</p>
+          <p>{{message.description}} </p>
+        </div>
+      </div>
+
+	  
+      <div class="aside">
+      <aside>
+	  
+        <h3>Upcoming Events</h3>
+		<hr />
+        {% for event in events %}
+		<p>{{ event.name }} - {{ event.created|date:"D d M Y" }}</p>
+		
+		{% endfor %}
+		
+      </aside>
+     </footer>  
+     <aside>
+        <h3>Alerts</h3>
+		<hr />
+        {% for alert in alerts %}
+		<p>{{ alert.name }} - {{ event.created|date:"D d M Y" }}</p>
+		<p>alert.description </p>
+		
+		{% endfor %}
+      </aside>
+    </div>
+        
+
+    </div>
+	{% endblock %}

@@ -31,25 +31,25 @@ def login(request):
 def home(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 	
 def financials(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 
 def rentals(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 	
 def support(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 
 # def loggedin(request):
