@@ -1,26 +1,57 @@
+
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.template.context_processors import csrf
+from django.template import RequestContext
+from django.shortcuts import render
 
+
+	
 def login(request):
-	c = {}
-	c.update(csrf(request))
-	return render_to_response('registration/login.html', c)
-	
-def auth_view(request):
-	username = request.POST.get('username', '')
-	password = request.POST.get('password', '')
-	user = auth.authenticate(username=username, password=password)
-	
-	if user is not None:
-		auth.login(request, user)
-		return HttpResponseRedirect('login')
+	context = RequestContext(request)
+	if request.method == 'POST':
+		username = request.POST.get('username', '')
+		password = request.POST.get('password', '')
+		user = auth.authenticate(username=username, password=password)
+		
+		if user is not None:
+			if user.is_active:
+				auth.login(request, user)
+				return HttpResponseRedirect('/home')
+			else:
+				return HttpResponse("Your account is not currently active.")
+		else:
+			#print: "Invalid login details: {0}, {1}".format(username, password)
+			return HttpResponse("Invalid login details supplied.")
 	else:
-		return HttpResponseRedirect('/accounts/invalid')
+		return render(request,'registration/login.html',{})
+
 
 def home(request):
-	return render_to_response('base.html')
+	if request.user.is_authenticated():
+		return render(request,'base.html',{})
+	else
+		return render(request,'registration/login.html',{})
+	
+def financials(request):
+	if request.user.is_authenticated():
+		return render(request,'base.html',{})
+	else
+		return render(request,'registration/login.html',{})
+
+def rentals(request):
+	if request.user.is_authenticated():
+		return render(request,'base.html',{})
+	else
+		return render(request,'registration/login.html',{})
+	
+def support(request):
+	if request.user.is_authenticated():
+		return render(request,'base.html',{})
+	else
+		return render(request,'registration/login.html',{})
+
 # def loggedin(request):
 	# return render_to_response{}
 	

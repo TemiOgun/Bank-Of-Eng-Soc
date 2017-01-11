@@ -61,6 +61,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+				'django.template.context_processors.csrf',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -70,8 +71,6 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = '/home'
-LOGIN_URL = '/login'
 
 WSGI_APPLICATION = 'BankOfEngSoc.wsgi.application'
 
@@ -123,5 +122,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_ROOT = os.path.join(DIRNAME, 'static')
+STATIC_ROOT = os.path.join(DIRNAME, '../main_app/static')
 STATIC_URL = '/static/'
+

@@ -17,11 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from main_app import views as main_views
-from main_app import urls as main_urls
+from main_app import url as main_urls
 
 urlpatterns = [
-	url(r'^login/$', main_views.login, name='login'),
-	url(r'^home/$', main_views.home, name='login'),
-	url(r'^logout/$', auth_views.logout,{'next_page': 'login'}, name = 'logout'),
-    url(r'^admin/', admin.site.urls),
+	url(r'^login/$', main_views.login),
+	url(r'^home/$', main_views.home, name = 'home'),
+	url(r'^financials/$', main_views.financials, name = 'financials'),
+	url(r'^rentals/$', main_views.rentals, name = 'rentals'),
+	url(r'^support/$', main_views.support, name = 'support'),
+	url(r'^logout/$', auth_views.logout),
+	url(r'^admin/', admin.site.urls)
 ]
