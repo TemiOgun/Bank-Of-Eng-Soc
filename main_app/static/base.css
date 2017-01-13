@@ -20,6 +20,43 @@ div#header {
   margin:0 auto;
 }
 
+table{
+padding: 15px;
+  width:auto;
+  table-layout: fixed;
+  float: left;
+}
+
+.tbl-header{
+  background-color: white;
+ }
+ 
+ .tbl-content{
+  float: left;
+  height: auto;
+  margin-top: 0px;
+}
+
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+    border: solid 1px black;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 20px;
+  color: black;
+
+  border: solid 1px black;
+}
+
 .title{
   overflow:hidden;
 }
@@ -28,7 +65,6 @@ div#header {
   float: left;
   left: 5px;
   width: 37px;
-  height 40px;
   height: auto;
 }
 
@@ -39,10 +75,23 @@ div#header {
   font-size: 1.4em;
   color: #fff;
 }
+aside {
+    border-top: 20px solid #551a8b;
+	padding: 10px 5;
+	background: white;
+	color: black;
+	-webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
+	float: right;
+	margin: 10 1.5%;
+    width: 40%;
+}
 
 div#container {
    width: 100%;
   margin: auto;
+  background-color:#b5b9bf;
 }
 
 .sidebar{
@@ -58,7 +107,7 @@ div#container {
   width: auto;
   height:100vh;
   margin-left: 250px; 
-  background-color: #95a5a6;
+  background-color: #626566;
   padding: 15px;
 
 
@@ -71,6 +120,8 @@ div#container {
 
 div#box{
   margin-top:15px;
+  width: 45%;
+  float: left;
 }
 
 div#box .box-top{
@@ -78,12 +129,14 @@ div#box .box-top{
   text-shadow: 0px 0px 1px #ddd;
   background-color: #8e44ad;
    padding: 5px;
+
 }
 
 
 div#box .box-panel{
   padding: 15px;
   background-color: #fff;
+
 }
 
 ul#nav {

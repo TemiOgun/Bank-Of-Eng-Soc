@@ -1,6 +1,6 @@
-
-{% load static %}
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block title %}MainPage{% endblock %}
 	{% block content %}
@@ -21,21 +21,27 @@
 	  
         <h3>Upcoming Events</h3>
 		<hr />
+		{% if events %}
         {% for event in events %}
 		<p>{{ event.name }} - {{ event.created|date:"D d M Y" }}</p>
-		
 		{% endfor %}
-		
+		{% else %}
+			<p> "No alerts"</p>
+		{% endif %}	
+
       </aside>
-     </footer>  
+
      <aside>
         <h3>Alerts</h3>
 		<hr />
+		{% if alerts %}
         {% for alert in alerts %}
 		<p>{{ alert.name }} - {{ event.created|date:"D d M Y" }}</p>
 		<p>alert.description </p>
-		
 		{% endfor %}
+		{% else %}
+			<p> "No alerts"</p>
+		{% endif %}	
       </aside>
     </div>
         

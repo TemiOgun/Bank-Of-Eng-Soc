@@ -1,42 +1,6 @@
-
-{% load static %}
 {% extends "base.html" %}
-
-<html>
-<link rel="stylesheet" type="text/css" href="base.css" />
-<meta name = "viewport" content= "width=device-width, initial-scale: 1.0, user-scaleable: 0" />
-<head>
-
-  <title>{% block title %}MainPage{% endblock %}</title>
-</head>
-
-<body>
-  <div id="header">
-    <div class="title">
-      <img  src="http://engsoc.queensu.ca/wp-content/uploads/2014/10/EngSoc-small.png" alt="Queen's Engineering Society" title="Queen's Engineering Society">
-      <a href="#">Bank of EngSoc</a></div>
-    
-    
-    
-  </div>
-  <a class="mobile" href="#">
-    MENU
-  </a>
-  <div id="container">
-    <div class="sidebar">
-        <h1 id = "OrgName">Aero Design Team</h1>
-      <ul id="nav">
-        <li><a class="selected" href="/home">Home</a></li>
-        <li><a href="/financials">My Financials </a></li>
-        <li><a href="#"> pre-approvals</a></li>
-        <li><a href="#"> Reinbursements </a></li>
-        <li><a href="/rentals"> Rentals</a></li>
-        <li><a href="#">Documentation </a></li>
-        <li><a href="/support">Support </a></li>
-        <li><a href="#">Contact Us </a></li>
-    <li><a href="/logout">Logout </a></li>
-      </ul>
-    </div>
+{% load static %}
+{% block title %}MainPage{% endblock %}
 	{% block content %}
 
 <div class="tbl-content">
@@ -70,7 +34,3 @@
     </aside>
 
 	{% endblock %}
-</div>	
-</body>
-
-</html>
