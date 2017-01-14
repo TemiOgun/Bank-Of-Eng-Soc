@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.shortcuts import render
-from .models import alert, message, event,transaction
+from .models import alert, message, event, transaction
 
 	
 def login(request):
@@ -63,6 +63,9 @@ def support(request):
 	else:
 		return render(request,'registration/login.html',{})
 
+def ledgerGenerator(transactions):
+	return transactions
+	
 # def loggedin(request):
 	# return render_to_response{}
 	

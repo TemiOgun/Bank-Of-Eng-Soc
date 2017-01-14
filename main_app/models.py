@@ -4,13 +4,10 @@ from django.db import models
 
 class transaction(models.Model):
 	number=models.IntegerField()
-	title=models.CharField(max_length=50)
-	amount=models.DecimalField(max_digits=10,decimal_places=2)
+	title=models.CharField(max_length=50, unique=False)
+	amount=models.FloatField()
 	submitted=models.DateTimeField()
 	processed=models.DateTimeField()
-	
-	def __unicode__(self):
-		return self.number
 		
 		
 # Create your models here.
