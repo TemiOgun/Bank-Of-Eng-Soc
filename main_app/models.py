@@ -12,6 +12,7 @@ class transaction(models.Model):
 	def __unicode__(self):
 		return self.number
 		
+		
 # Create your models here.
 class account(models.Model):
 	account_name = models.CharField(max_length=20, unique=True)

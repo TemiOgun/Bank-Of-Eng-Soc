@@ -25,7 +25,7 @@ div#header {
 div.table-title {
   display: block;
   margin: auto;
-  
+  font-family: "Roboto", helvetica, arial, sans-serif;
   padding:10px;
   width: 100%;
 }
@@ -33,16 +33,33 @@ div.table-title {
 .table-title h1 {
    color: #fafafa;
    font-size: 40px;
-   font-weight: 400;
+   font-weight: 200;
    font-style:normal;
    font-family: "Roboto", helvetica, arial, sans-serif;
 
 }
 
+.button1 {
+	float:right;
+	border-color:#3d1439;
+    background-color: #592b54; /* Green */
+    color: white;
+font-family: "Roboto", helvetica, arial, sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
 
 /*** Table Styles **/
 
 .table-fill {
+	font-family: "Roboto", helvetica, arial, sans-serif;
   background: white;
   border-radius:3px;
   border-collapse: collapse;
@@ -60,8 +77,8 @@ th {
   background:#fce158;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
-  font-size:25px;
-  font-weight: 200;
+  font-size:18px;
+  font-weight: 300;
   padding:12px;
   text-align:left;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -183,11 +200,13 @@ aside {
 	float: right;
 	margin: 15 1.5%;
     width: 34%;
+	font-family: "Roboto", helvetica, arial, sans-serif;
 }
 
 div#table_container{
 	width:100%;
 	margin:5%;
+	display: inline-block;
 }
 
 div#container {
@@ -219,13 +238,17 @@ div#container {
   color: #424242
     font-size: 0.73em;
 }
-
+div#above_table{
+	width:100%;
+	padding-bottom:2px;
+}
 div#box{
   min-height: 120px;
   max-height:500px
   margin-top:15px;
   float:left;
   width: 60%;
+  font-family: "Roboto", helvetica, arial, sans-serif;
 }
 
 div#box .box-top{
@@ -251,6 +274,13 @@ ul#nav li{
   list-style: none;
 
 }
+h2#purpletext{
+    color: #fff;
+	float:left;
+	padding-left: 20px;
+	font-family: "Roboto", helvetica, arial, sans-serif;
+	
+	}
 
 h1#OrgName{
     font-size:2em;
@@ -258,7 +288,7 @@ h1#OrgName{
     color: #ccc;
   border-bottom: 1px solid #0A0A0A;
     text-align: center;
-
+font-family: "Roboto", helvetica, arial, sans-serif;
 
 }
 
@@ -272,6 +302,7 @@ ul#nav li a{
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+  font-family: "Roboto", helvetica, arial, sans-serif;
 }
 
 ul#nav li a:hover {
