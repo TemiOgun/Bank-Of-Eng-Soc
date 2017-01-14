@@ -8,6 +8,17 @@ class account(models.Model):
 	account_pass = models.CharField(max_length=20, unique=True)
 	
 
+class transaction(models.Model):
+	number=models.IntegerField()
+	title=models.CharField(max_length=20,unique=False)
+	amount=models.DecimalField(...,max_digits=10,decimal_places=2)
+	submitted=models.DateTimeField()
+	processed=models.DateTimeField()
+	
+	def __unicode__(self):
+		return self.title
+	
+
 class message(models.Model): 
          
     name = models.CharField(max_length=100, unique=True) #Like a VARCHAR field

@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.shortcuts import render
-from .models import alert
+from .models import alert, message, event
 
 	
 def login(request):
@@ -30,17 +30,22 @@ def login(request):
 def news(request):
 	return render(request,'base.html',{})
 
+	
+	
 def home(request):
 	alerts= alert.objects.all()
-	context = {'alerts': alerts}
+	messages= message.objects.all()
+	events=event.objects.all()
+	context = {'alerts': alerts, 'message':messages[0], 'events': events}
 	if request.user.is_authenticated():
 		return render(request,'mainpage.html', context)
 	else:
 		return render(request,'registration/login.html',{})
-	
+
+		
 def financials(request):
 	if request.user.is_authenticated():
-		return render(request,'base.html',{})
+		return render(request,'MyFinancials.html',{})
 	else:
 		return render(request,'registration/login.html',{})
 

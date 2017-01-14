@@ -75,17 +75,20 @@ td{
   font-size: 1.4em;
   color: #fff;
 }
+
 aside {
-    border-top: 20px solid #551a8b;
-	padding: 10px 5;
+    border-top: 30px solid #551a8b;
+	padding: 20px 20;
 	background: white;
 	color: black;
-	-webkit-box-shadow: 0 5px 10px #aaa;
-    -moz-box-shadow: 0 5px 10px #aaa;
-    box-shadow: 0 5px 10px #aaa;
 	float: right;
-	margin: 10 1.5%;
-    width: 40%;
+	margin: 15 1.5%;
+    width: 45%;
+}
+
+div#table_container{
+	width:100%;
+	margin:5%;
 }
 
 div#container {
@@ -120,8 +123,8 @@ div#container {
 
 div#box{
   margin-top:15px;
+  float:left;
   width: 45%;
-  float: left;
 }
 
 div#box .box-top{
@@ -129,13 +132,12 @@ div#box .box-top{
   text-shadow: 0px 0px 1px #ddd;
   background-color: #8e44ad;
    padding: 5px;
-
 }
-
 
 div#box .box-panel{
   padding: 15px;
   background-color: #fff;
+  
 
 }
 
