@@ -3,34 +3,43 @@
 {% block title %}MainPage{% endblock %}
 	{% block content %}
 <div class="content">
-<div class="tbl-content">
-    <table cellpadding="10" cellspacing="0" border="0">
-      <tbody>
-   <tr>
-    <th>Date: </th>
-	<td>dd/mm/yyyy</td>
-  </tr>
-  <tr>
-    <th>Pickup Time: </th>
-	<td>hh:mm</td>
-  </tr>
-  <tr>
-    <th>Dropoff Time: </th>
-	<td>hh:mm</td>
-  </tr>
-      </tbody>
-    </table>
- </div>
 
-    <aside>
-	  
-        <h3>Upcoming Events</h3>
-		<hr />
-        {% for event in events %}
-		<p>{{ event.name }} - {{ event.created|date:"D d M Y" }}</p>
-		
-		{% endfor %}
-		
-    </aside>
+<div class="table-title">
+<h1 id="table-title">My Financials</h1>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Transaction #</th>
+<th class="text-left">Titile</th>
+<th class="text-left">Amount</th>
+<th class="text-left">Submitted</th>
+<th class="text-left">Processed</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+{% if transactions %}
+{% for transaction in transactions %}
+<tr>
+<td class="text-left">{{transaction.number}}</td>
+<td class="text-left">{{transaction.title}}</td>
+<td class="text-left">$ {{transaction.amount}}</td>
+<td class="text-left">{{transaction.submitted}}</td>
+<td class="text-left">{{transaction.processed}}</td>
+</tr>
+{% endfor %}
+{% else %}
+<tr>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+<td class="text-left">$ none</td>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+
+
  </div>
 	{% endblock %}

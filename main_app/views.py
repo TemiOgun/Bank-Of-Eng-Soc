@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.shortcuts import render
-from .models import alert, message, event
+from .models import alert, message, event,transaction
 
 	
 def login(request):
@@ -44,8 +44,10 @@ def home(request):
 
 		
 def financials(request):
+	transactions=transaction.objects.all()
+	context={'transactions':transactions}
 	if request.user.is_authenticated():
-		return render(request,'MyFinancials.html',{})
+		return render(request,'MyFinancials.html',context)
 	else:
 		return render(request,'registration/login.html',{})
 
