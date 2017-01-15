@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}MainPage{% endblock %}
+	{% block content %}
+<div class="content">
+
+<div class="table-title">
+<h1 id="table-title">My Financials</h1>
+</div>
+
+<h2 id="purpletext"> Recent Transactions: </h2>
+<button class="button1">Download the ledger</button>
+
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Transaction #</th>
+<th class="text-left">Titile</th>
+<th class="text-left">Amount</th>
+<th class="text-left">Submitted</th>
+<th class="text-left">Processed</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+{% if transactions %}
+{% for transaction in transactions %}
+<tr>
+<td class="text-left">{{transaction.number}}</td>
+<td class="text-left">{{transaction.title}}</td>
+<td class="text-left">$ {{transaction.amount}}</td>
+<td class="text-left">{{transaction.submitted}}</td>
+<td class="text-left">{{transaction.processed}}</td>
+</tr>
+{% endfor %}
+{% else %}
+<tr>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+<td class="text-left">none</td>
+</tr>
+{% endif %}
+</tbody>
+</table>
+<h2 id="purpletext"> Current Balance: $ {{totalamount.balance}}</h2>
+
+
+
+ </div>
+	{% endblock %}

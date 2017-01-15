@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from django.template import RequestContext
 from django.shortcuts import render
-
+from .models import alert, message, event, transaction
 
 	
 def login(request):
@@ -27,31 +27,45 @@ def login(request):
 	else:
 		return render(request,'registration/login.html',{})
 
+def news(request):
+	return render(request,'base.html',{})
 
-def home(request):
-	if request.user.is_authenticated():
-		return render(request,'base.html',{})
-	else
-		return render(request,'registration/login.html',{})
 	
-def financials(request):
+	
+def home(request):
+	alerts= alert.objects.all()
+	messages= message.objects.all()
+	events=event.objects.all()
+	context = {'alerts': alerts, 'message':messages[0], 'events': events}
 	if request.user.is_authenticated():
-		return render(request,'base.html',{})
-	else
+		return render(request,'mainpage.html', context)
+	else:
+		return render(request,'registration/login.html',{})
+
+		
+def financials(request):
+	transactions=transaction.objects.all()
+	context={'transactions':transactions}
+	if request.user.is_authenticated():
+		return render(request,'MyFinancials.html',context)
+	else:
 		return render(request,'registration/login.html',{})
 
 def rentals(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 	
 def support(request):
 	if request.user.is_authenticated():
 		return render(request,'base.html',{})
-	else
+	else:
 		return render(request,'registration/login.html',{})
 
+def ledgerGenerator(transactions):
+	return transactions
+	
 # def loggedin(request):
 	# return render_to_response{}
 	
